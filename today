@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Stop verbose lines
+TODOTXT_VERBOSE=0
+
+# Get the main action
+action=$1
+shift
+
+[ "$action" = "usage" ] && {
+    echo "  Today's view: displays today's tasks"
+    echo "    today"
+    exit
+}
+
+TODAY_LIST=$(_list "$TODO_FILE" "t:$(date +%Y-%m-%d)")
+if [ -n "${TODAY_LIST}" ]; then
+    echo "${TODAY_LIST}"
+fi
