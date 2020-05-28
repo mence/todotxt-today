@@ -10,6 +10,7 @@ shift
 [ "$action" = "usage" ] && {
     echo "  Today's view: displays today's tasks"
     echo "    today"
+    echo "      Shows tasks timed for today which are listed as t:YYYY-MM-DD"
     exit
 }
 
