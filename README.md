@@ -6,7 +6,7 @@ you today's tasks.
 
 Any task with `t:YYYY-MM-DD` matching today's date will be displayed.
 
-```bash
+```
 $ date +%Y-%m-%d
 2020-05-28
 $ todo.sh list
