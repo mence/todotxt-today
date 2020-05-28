@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 # Stop verbose lines
 TODOTXT_VERBOSE=0
 
