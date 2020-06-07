@@ -13,13 +13,23 @@ shift
     echo "  Today's view: displays today's tasks"
     echo "    today"
     echo "      Shows tasks timed for today which are listed as t:YYYY-MM-DD"
+    echo "      Shows tasks due for today which are listed as due:YYYY-MM-DD"
     exit
 }
 
 TODAY_LIST=$(_list "$TODO_FILE" "t:$(date +%Y-%m-%d)")
 if [ -n "${TODAY_LIST}" ]; then
     echo "==================================="
-    echo "Tasks for today:"
+    echo "Tasks set for today:"
     echo "==================================="
     echo "${TODAY_LIST}"
 fi
+
+DUE_TODAY_LIST=$(_list "$TODO_FILE" "due:$(date +%Y-%m-%d)")
+if [ -n "${DUE_TODAY_LIST}" ]; then
+    echo "==================================="
+    echo "Tasks due for today:"
+    echo "==================================="
+    echo "${DUE_TODAY_LIST}"
+fi
+
